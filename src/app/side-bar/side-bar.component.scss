@@ -1,0 +1,28 @@
+@import "../styles/styles.scss";
+
+.topBar {
+    height:150px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    .topBar__inputBox{
+        background-color:$lightBlue;
+        overflow:hidden;
+        border-radius: 30px;
+        width: 80%;
+        height: 35px;
+        display:flex;
+        align-items: center;
+        span {
+            width: 35px;
+            height: 35px;
+            font-size: 40px;
+            text-align: center;
+        }
+        .topBar__inputBox__input{
+            height: 35px;
+            border: none;
+        background-color:$lightBlue;
+        }
+    }
+}
