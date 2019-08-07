@@ -7,9 +7,18 @@
 </div>
 <div class="clockBar">
     <div class="clockBar__clock">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 300 300" transform="rotate( 93.33333333333333 )" class="donut" style="width: 300px; height: 300px;">
-            <circle class="outerClock" cx="50%" cy="50%" r="130" fill="transparent" stroke="rgba(70, 130, 180, 0.15)" stroke-width="10" stroke-dasharray="628.3185307179587" class="donut-bg" stroke-linecap="round" style="transition: all 200ms linear 0s; opacity: 1;"></circle>
-            <circle class="innerClock" fill="transparent" cx="50%" cy="50%" r="130" stroke="mediumslateblue" stroke-width="10" stroke-dashoffset="628.3185307179587" stroke-dasharray="628.3185307179587" class="donut-fill" stroke-linecap="round" style="opacity: 1; transition: all 200ms linear 0s;"></circle>
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 400 400" transform="rotate( 93.33333333333333 )" class="donut" style="width: 400px; height: 400px;">
+            <circle class="outerClock" cx="50%" cy="50%" r="180" fill="transparent" stroke="rgba(70, 130, 180, 0.15)" stroke-width="10" stroke-dasharray="628.3185307179587" class="donut-bg" stroke-linecap="round" style="transition: all 200ms linear 0s; opacity: 1;"></circle>
+            <circle class="innerClock" fill="transparent" cx="50%" cy="50%" r="180" stroke="mediumslateblue" stroke-width="10" stroke-dashoffset="628.3185307179587" stroke-dasharray="628.3185307179587" class="donut-fill" stroke-linecap="round" style="opacity: 1; transition: all 200ms linear 0s;"></circle>
         </svg>
+        <div class='clockBar__clock__time' *ngIf="currTime$ | async as currTime">
+          {{currTime.min}}:{{currTime.second}}
+        </div>
+    </div>
+</div>
+<div class="bottomBar">
+    <div class="bottomBar__Button" (click)="togglePlay()">
+      <div class="bottomBar__Button__play" *ngIf="pause === false"></div>
+      <div class="bottomBar__Button__pause" *ngIf="pause === true"></div>
     </div>
 </div>

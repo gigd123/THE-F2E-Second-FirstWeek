@@ -28,15 +28,15 @@
     }
     .clockBar{
         width:100%;
-        height:700px;
+        height:600px;
         position:relative;
         .clockBar__clock{
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%,-60%);
-            width: 450px;
-            height: 450px;
+            width: 500px;
+            height: 500px;
             background-color:#FBFBFC;
             border-radius: 50%;
             box-shadow:0 0 20px #FBFBFC;
@@ -52,6 +52,30 @@
                     background-color: $clockColor;
                 }
             }
+            .clockBar__clock__time{
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
         }
+    }
+    .bottomBar{
+      width: 100%;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      .bottomBar__Button__play{
+        width: 50px;
+        height: 50px;
+        background-size: cover;
+        background-image: url('../../assets/img/play.png');
+      }
+      .bottomBar__Button__pause{
+        width: 50px;
+        height: 50px;
+        background-size: cover;
+        background-image: url('../../assets/img/pause.png');
+      }
     }
 }

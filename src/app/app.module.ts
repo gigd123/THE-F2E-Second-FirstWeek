@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { ClockComponent } from './clock/clock.component';
+import { CountDownService } from '../app/services/count-down.service';
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import { ClockComponent } from './clock/clock.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CountDownService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

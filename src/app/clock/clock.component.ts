@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subject, fromEvent } from 'rxjs';
-import { takeUntil, switchMap, map, take, tap, filter } from 'rxjs/operators';
+import { Observable, Subscription, Subject, fromEvent, BehaviorSubject, timer, NEVER, interval } from 'rxjs';
+import { takeUntil, switchMap, map, merge,take, tap, filter, takeWhile, mapTo, scan } from 'rxjs/operators';
+import { CountDownService } from '../services/count-down.service';
 
 @Component({
   selector: 'app-clock',
@@ -8,8 +9,18 @@ import { takeUntil, switchMap, map, take, tap, filter } from 'rxjs/operators';
   styleUrls: ['./clock.component.scss']
 })
 export class ClockComponent implements OnInit {
+  public pause = false;
+  constructor(
+    private $countDown: CountDownService
+  ) { }
 
-  constructor() { }
+  public currTime$ = this.$countDown.timer$.pipe();
+
+  public togglePlay(){
+    this.pause === true ? this.pause = false : this.pause = true;
+    console.log('pause====', this.pause);
+    this.$countDown.currTime$.next(this.pause);
+  }
 
   ngOnInit() {
   }
